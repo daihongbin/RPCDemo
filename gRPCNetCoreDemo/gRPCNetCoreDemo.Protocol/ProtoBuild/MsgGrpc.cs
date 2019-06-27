@@ -39,52 +39,6 @@ namespace GRPCNetCoreDemo.Protocol {
 
     }
 
-    /// <summary>Client for MsgService</summary>
-    public partial class MsgServiceClient : grpc::ClientBase<MsgServiceClient>
-    {
-      /// <summary>Creates a new client for MsgService</summary>
-      /// <param name="channel">The channel to use to make remote calls.</param>
-      public MsgServiceClient(grpc::Channel channel) : base(channel)
-      {
-      }
-      /// <summary>Creates a new client for MsgService that uses a custom <c>CallInvoker</c>.</summary>
-      /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
-      public MsgServiceClient(grpc::CallInvoker callInvoker) : base(callInvoker)
-      {
-      }
-      /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
-      protected MsgServiceClient() : base()
-      {
-      }
-      /// <summary>Protected constructor to allow creation of configured clients.</summary>
-      /// <param name="configuration">The client configuration.</param>
-      protected MsgServiceClient(ClientBaseConfiguration configuration) : base(configuration)
-      {
-      }
-
-      public virtual global::GRPCNetCoreDemo.Protocol.GetMsgSumReply GetSum(global::GRPCNetCoreDemo.Protocol.GetMsgNumRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-      {
-        return GetSum(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-      }
-      public virtual global::GRPCNetCoreDemo.Protocol.GetMsgSumReply GetSum(global::GRPCNetCoreDemo.Protocol.GetMsgNumRequest request, grpc::CallOptions options)
-      {
-        return CallInvoker.BlockingUnaryCall(__Method_GetSum, null, options, request);
-      }
-      public virtual grpc::AsyncUnaryCall<global::GRPCNetCoreDemo.Protocol.GetMsgSumReply> GetSumAsync(global::GRPCNetCoreDemo.Protocol.GetMsgNumRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-      {
-        return GetSumAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-      }
-      public virtual grpc::AsyncUnaryCall<global::GRPCNetCoreDemo.Protocol.GetMsgSumReply> GetSumAsync(global::GRPCNetCoreDemo.Protocol.GetMsgNumRequest request, grpc::CallOptions options)
-      {
-        return CallInvoker.AsyncUnaryCall(__Method_GetSum, null, options, request);
-      }
-      /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
-      protected override MsgServiceClient NewInstance(ClientBaseConfiguration configuration)
-      {
-        return new MsgServiceClient(configuration);
-      }
-    }
-
     /// <summary>Creates service definition that can be registered with a server</summary>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     public static grpc::ServerServiceDefinition BindService(MsgServiceBase serviceImpl)
