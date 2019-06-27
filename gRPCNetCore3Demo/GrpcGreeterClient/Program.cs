@@ -18,7 +18,7 @@ namespace GrpcGreeterClient
             httpClient.BaseAddress = new Uri("http://localhost:50051");
             var client = GrpcClient.Create<Greeter.GreeterClient>(httpClient);
             var reply = await client.SayHelloAsync(
-                new HelloRequest {Name = "GreeterClient"});
+                new HelloRequest {Name = "GreeterClient",Age = 20});
             Console.WriteLine("你好:" + reply.Message);
             Console.WriteLine("按任意键退出！");
             Console.ReadKey();
