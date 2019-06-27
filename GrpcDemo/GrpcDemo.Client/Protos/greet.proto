@@ -1,0 +1,22 @@
+syntax = "proto3"; // 表示这里使用proto3语言规范，如果没有的话，默认使用proto2语言规范
+
+// 此处为定义生成C#类的命名空间
+option csharp_namespace = "GrpcDemo.Server";
+
+package Greet; // 为proto声明一个包
+
+// 这里定义一个叫Greeter的服务，并且在里面定义了一个SayHello方法
+service Greeter {
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+// 此处定义了请求参数
+message HelloRequest {
+  string name = 1;
+}
+
+//此处定义返回值
+message HelloReply {
+  string message = 1;
+}
