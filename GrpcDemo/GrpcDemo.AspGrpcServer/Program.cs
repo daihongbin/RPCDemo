@@ -24,8 +24,8 @@ namespace GrpcDemo.AspGrpcServer
             server.Start();
 
             Console.WriteLine("gRPC服务开启的端口 " + Port);
-            Console.WriteLine("任意键退出");
-            Console.ReadKey();
+            //Console.WriteLine("任意键退出");
+            //Console.ReadKey();
 
             host.Run();
 
