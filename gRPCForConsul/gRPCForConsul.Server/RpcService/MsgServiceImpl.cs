@@ -1,5 +1,5 @@
 ﻿using Grpc.Core;
-using Snai.GrpcService.Protocol;
+using GRPCForConsul.Server;
 using System;
 using System.Threading.Tasks;
 

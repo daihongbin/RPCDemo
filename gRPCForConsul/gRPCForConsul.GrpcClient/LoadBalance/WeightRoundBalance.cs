@@ -59,10 +59,16 @@ namespace gRPCForConsul.GrpcClient.LoadBalance
             var services = new List<string>();
             foreach (var service in healthServices)
             {
-                //services.AddRange();
+                services.AddRange(Enumerable.Repeat(service.IP + ":" + service.Port, service.Weight));
             }
 
-            return null;
+            var servicesArray = services.ToArray();
+            Balance = Balance % servicesArray.Length;
+
+            var grpcUrl = servicesArray[Balance];
+            Balance = Balance + 1;
+
+            return grpcUrl;
         }
     }
 }

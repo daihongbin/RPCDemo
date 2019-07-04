@@ -7,32 +7,32 @@
 
 using grpc = global::Grpc.Core;
 
-namespace Snai.GrpcService.Protocol {
+namespace GRPCForConsul.Server {
   public static partial class MsgService
   {
-    static readonly string __ServiceName = "Snai.GrpcService.Protocol.MsgService";
+    static readonly string __ServiceName = "gRPCForConsul.Server.MsgService";
 
-    static readonly grpc::Marshaller<global::Snai.GrpcService.Protocol.GetMsgNumRequest> __Marshaller_Snai_GrpcService_Protocol_GetMsgNumRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Snai.GrpcService.Protocol.GetMsgNumRequest.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::Snai.GrpcService.Protocol.GetMsgSumReply> __Marshaller_Snai_GrpcService_Protocol_GetMsgSumReply = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Snai.GrpcService.Protocol.GetMsgSumReply.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::GRPCForConsul.Server.GetMsgNumRequest> __Marshaller_gRPCForConsul_Server_GetMsgNumRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GRPCForConsul.Server.GetMsgNumRequest.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::GRPCForConsul.Server.GetMsgSumReply> __Marshaller_gRPCForConsul_Server_GetMsgSumReply = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GRPCForConsul.Server.GetMsgSumReply.Parser.ParseFrom);
 
-    static readonly grpc::Method<global::Snai.GrpcService.Protocol.GetMsgNumRequest, global::Snai.GrpcService.Protocol.GetMsgSumReply> __Method_GetSum = new grpc::Method<global::Snai.GrpcService.Protocol.GetMsgNumRequest, global::Snai.GrpcService.Protocol.GetMsgSumReply>(
+    static readonly grpc::Method<global::GRPCForConsul.Server.GetMsgNumRequest, global::GRPCForConsul.Server.GetMsgSumReply> __Method_GetSum = new grpc::Method<global::GRPCForConsul.Server.GetMsgNumRequest, global::GRPCForConsul.Server.GetMsgSumReply>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetSum",
-        __Marshaller_Snai_GrpcService_Protocol_GetMsgNumRequest,
-        __Marshaller_Snai_GrpcService_Protocol_GetMsgSumReply);
+        __Marshaller_gRPCForConsul_Server_GetMsgNumRequest,
+        __Marshaller_gRPCForConsul_Server_GetMsgSumReply);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::Snai.GrpcService.Protocol.MsgReflection.Descriptor.Services[0]; }
+      get { return global::GRPCForConsul.Server.MsgReflection.Descriptor.Services[0]; }
     }
 
     /// <summary>Base class for server-side implementations of MsgService</summary>
     [grpc::BindServiceMethod(typeof(MsgService), "BindService")]
     public abstract partial class MsgServiceBase
     {
-      public virtual global::System.Threading.Tasks.Task<global::Snai.GrpcService.Protocol.GetMsgSumReply> GetSum(global::Snai.GrpcService.Protocol.GetMsgNumRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::GRPCForConsul.Server.GetMsgSumReply> GetSum(global::GRPCForConsul.Server.GetMsgNumRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -53,7 +53,7 @@ namespace Snai.GrpcService.Protocol {
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     public static void BindService(grpc::ServiceBinderBase serviceBinder, MsgServiceBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_GetSum, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Snai.GrpcService.Protocol.GetMsgNumRequest, global::Snai.GrpcService.Protocol.GetMsgSumReply>(serviceImpl.GetSum));
+      serviceBinder.AddMethod(__Method_GetSum, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GRPCForConsul.Server.GetMsgNumRequest, global::GRPCForConsul.Server.GetMsgSumReply>(serviceImpl.GetSum));
     }
 
   }

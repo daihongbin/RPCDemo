@@ -1,7 +1,7 @@
 ﻿using Grpc.Core;
 using gRPCForConsul.Server.RpcService;
+using GRPCForConsul.Server;
 using Microsoft.Extensions.Options;
-using Snai.GrpcService.Protocol;
 using System;
 
 namespace gRPCForConsul.Server

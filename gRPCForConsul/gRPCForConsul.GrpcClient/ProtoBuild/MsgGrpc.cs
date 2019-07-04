@@ -7,25 +7,25 @@
 
 using grpc = global::Grpc.Core;
 
-namespace Snai.GrpcService.Protocol {
+namespace GRPCForConsul.Server {
   public static partial class MsgService
   {
-    static readonly string __ServiceName = "Snai.GrpcService.Protocol.MsgService";
+    static readonly string __ServiceName = "gRPCForConsul.Server.MsgService";
 
-    static readonly grpc::Marshaller<global::Snai.GrpcService.Protocol.GetMsgNumRequest> __Marshaller_Snai_GrpcService_Protocol_GetMsgNumRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Snai.GrpcService.Protocol.GetMsgNumRequest.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::Snai.GrpcService.Protocol.GetMsgSumReply> __Marshaller_Snai_GrpcService_Protocol_GetMsgSumReply = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Snai.GrpcService.Protocol.GetMsgSumReply.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::GRPCForConsul.Server.GetMsgNumRequest> __Marshaller_gRPCForConsul_Server_GetMsgNumRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GRPCForConsul.Server.GetMsgNumRequest.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::GRPCForConsul.Server.GetMsgSumReply> __Marshaller_gRPCForConsul_Server_GetMsgSumReply = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GRPCForConsul.Server.GetMsgSumReply.Parser.ParseFrom);
 
-    static readonly grpc::Method<global::Snai.GrpcService.Protocol.GetMsgNumRequest, global::Snai.GrpcService.Protocol.GetMsgSumReply> __Method_GetSum = new grpc::Method<global::Snai.GrpcService.Protocol.GetMsgNumRequest, global::Snai.GrpcService.Protocol.GetMsgSumReply>(
+    static readonly grpc::Method<global::GRPCForConsul.Server.GetMsgNumRequest, global::GRPCForConsul.Server.GetMsgSumReply> __Method_GetSum = new grpc::Method<global::GRPCForConsul.Server.GetMsgNumRequest, global::GRPCForConsul.Server.GetMsgSumReply>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetSum",
-        __Marshaller_Snai_GrpcService_Protocol_GetMsgNumRequest,
-        __Marshaller_Snai_GrpcService_Protocol_GetMsgSumReply);
+        __Marshaller_gRPCForConsul_Server_GetMsgNumRequest,
+        __Marshaller_gRPCForConsul_Server_GetMsgSumReply);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::Snai.GrpcService.Protocol.MsgReflection.Descriptor.Services[0]; }
+      get { return global::GRPCForConsul.Server.MsgReflection.Descriptor.Services[0]; }
     }
 
     /// <summary>Client for MsgService</summary>
@@ -51,19 +51,19 @@ namespace Snai.GrpcService.Protocol {
       {
       }
 
-      public virtual global::Snai.GrpcService.Protocol.GetMsgSumReply GetSum(global::Snai.GrpcService.Protocol.GetMsgNumRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::GRPCForConsul.Server.GetMsgSumReply GetSum(global::GRPCForConsul.Server.GetMsgNumRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetSum(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual global::Snai.GrpcService.Protocol.GetMsgSumReply GetSum(global::Snai.GrpcService.Protocol.GetMsgNumRequest request, grpc::CallOptions options)
+      public virtual global::GRPCForConsul.Server.GetMsgSumReply GetSum(global::GRPCForConsul.Server.GetMsgNumRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_GetSum, null, options, request);
       }
-      public virtual grpc::AsyncUnaryCall<global::Snai.GrpcService.Protocol.GetMsgSumReply> GetSumAsync(global::Snai.GrpcService.Protocol.GetMsgNumRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::GRPCForConsul.Server.GetMsgSumReply> GetSumAsync(global::GRPCForConsul.Server.GetMsgNumRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetSumAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncUnaryCall<global::Snai.GrpcService.Protocol.GetMsgSumReply> GetSumAsync(global::Snai.GrpcService.Protocol.GetMsgNumRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::GRPCForConsul.Server.GetMsgSumReply> GetSumAsync(global::GRPCForConsul.Server.GetMsgNumRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetSum, null, options, request);
       }

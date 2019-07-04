@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Snai.GrpcService.Protocol {
+namespace GRPCForConsul.Server {
 
   /// <summary>Holder for reflection information generated from Protos/msg.proto</summary>
   public static partial class MsgReflection {
@@ -24,17 +24,17 @@ namespace Snai.GrpcService.Protocol {
     static MsgReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChBQcm90b3MvbXNnLnByb3RvEhlTbmFpLkdycGNTZXJ2aWNlLlByb3RvY29s",
-            "Ii4KEEdldE1zZ051bVJlcXVlc3QSDAoETnVtMRgBIAEoBRIMCgROdW0yGAIg",
-            "ASgFIh0KDkdldE1zZ1N1bVJlcGx5EgsKA1N1bRgBIAEoBTJwCgpNc2dTZXJ2",
-            "aWNlEmIKBkdldFN1bRIrLlNuYWkuR3JwY1NlcnZpY2UuUHJvdG9jb2wuR2V0",
-            "TXNnTnVtUmVxdWVzdBopLlNuYWkuR3JwY1NlcnZpY2UuUHJvdG9jb2wuR2V0",
-            "TXNnU3VtUmVwbHkiAGIGcHJvdG8z"));
+            "ChBQcm90b3MvbXNnLnByb3RvEhRnUlBDRm9yQ29uc3VsLlNlcnZlciIuChBH",
+            "ZXRNc2dOdW1SZXF1ZXN0EgwKBE51bTEYASABKAUSDAoETnVtMhgCIAEoBSId",
+            "Cg5HZXRNc2dTdW1SZXBseRILCgNTdW0YASABKAUyZgoKTXNnU2VydmljZRJY",
+            "CgZHZXRTdW0SJi5nUlBDRm9yQ29uc3VsLlNlcnZlci5HZXRNc2dOdW1SZXF1",
+            "ZXN0GiQuZ1JQQ0ZvckNvbnN1bC5TZXJ2ZXIuR2V0TXNnU3VtUmVwbHkiAGIG",
+            "cHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Snai.GrpcService.Protocol.GetMsgNumRequest), global::Snai.GrpcService.Protocol.GetMsgNumRequest.Parser, new[]{ "Num1", "Num2" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Snai.GrpcService.Protocol.GetMsgSumReply), global::Snai.GrpcService.Protocol.GetMsgSumReply.Parser, new[]{ "Sum" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::GRPCForConsul.Server.GetMsgNumRequest), global::GRPCForConsul.Server.GetMsgNumRequest.Parser, new[]{ "Num1", "Num2" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GRPCForConsul.Server.GetMsgSumReply), global::GRPCForConsul.Server.GetMsgSumReply.Parser, new[]{ "Sum" }, null, null, null)
           }));
     }
     #endregion
@@ -49,7 +49,7 @@ namespace Snai.GrpcService.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Snai.GrpcService.Protocol.MsgReflection.Descriptor.MessageTypes[0]; }
+      get { return global::GRPCForConsul.Server.MsgReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -206,7 +206,7 @@ namespace Snai.GrpcService.Protocol {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Snai.GrpcService.Protocol.MsgReflection.Descriptor.MessageTypes[1]; }
+      get { return global::GRPCForConsul.Server.MsgReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

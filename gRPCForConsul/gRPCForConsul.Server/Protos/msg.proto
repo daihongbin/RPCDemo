@@ -1,6 +1,6 @@
 ﻿syntax = "proto3";
 
-package Snai.GrpcService.Protocol;
+package gRPCForConsul.Server;
 
 service MsgService{
   rpc GetSum(GetMsgNumRequest) returns (GetMsgSumReply){}
