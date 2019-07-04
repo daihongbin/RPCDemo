@@ -27,8 +27,10 @@ namespace gRPCForConsul.GrpcClient.LoadBalance
 
         public string GetGrpcService(string serviceName)
         {
+            //拿取配置文件里配置好的grpc服务端口，其实大可不必这样，因为consul支持tcp健康，只需要ip地址+端口就可以完成健康检查
             var grpcServices = GrpcSettings.Value.GrpcServices;
 
+            //获取consul里的服务地址和端口
             var healthServiceID = AppFind.FindConsul(serviceName);
 
             if (grpcServices == null || grpcServices.Count <= 0
@@ -62,6 +64,7 @@ namespace gRPCForConsul.GrpcClient.LoadBalance
                 services.AddRange(Enumerable.Repeat(service.IP + ":" + service.Port, service.Weight));
             }
 
+            //由于这个类变成注入的单例类，balance累加，每次就会变成不同的grpc端口，即可完成负载均衡
             var servicesArray = services.ToArray();
             Balance = Balance % servicesArray.Length;
 
