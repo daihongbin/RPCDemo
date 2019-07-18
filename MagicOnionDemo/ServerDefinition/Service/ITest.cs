@@ -1,9 +1,9 @@
 ﻿using MagicOnion;
 
-namespace ServerDefinition
+namespace ServerDefinition.Service
 {
     public interface ITest:IService<ITest>
     {
-        UnaryResult<string> SumAsync(int x,int y);
+        UnaryResult<string> Sum(int x,int y);
     }
 }

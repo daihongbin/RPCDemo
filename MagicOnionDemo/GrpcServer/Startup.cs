@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Grpc.Core;
+﻿using Grpc.Core;
 using MagicOnion.Server;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using ServerDefinition;
+using ServerDefinition.Service;
+using System;
 
 namespace GrpcServer
 {
@@ -30,24 +25,29 @@ namespace GrpcServer
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
+            #region 注册Grpc
             //通过反射去拿
             MagicOnionServiceDefinition service = MagicOnionEngine.BuildServerServiceDefinition(
-                new[] {typeof(ITest).Assembly}, //如果实现的服务层在另一个程序集，需添加此项
-                new MagicOnionOptions(true)
-                {
-                    MagicOnionLogger = new MagicOnionLogToGrpcLogger()
-                }
+                    new[] {typeof(ITest).Assembly}, //如果实现的服务层在另一个程序集，需添加此项
+                    new MagicOnionOptions(true)
+                    {
+                        MagicOnionLogger = new MagicOnionLogToGrpcLogger()
+                    }
                 );
 
+            var serverAddress = this.Configuration["Service:LocalIPAddress"];
+            var serverPort = Convert.ToInt32(this.Configuration["Service:Port"]);
             Server server = new Server
             {
                 Services = { service },
                 Ports =
                 {
-                    new ServerPort(this.Configuration["Service:LocalIPAddress"],Convert.ToInt32(this.Configuration["Service:Port"]),ServerCredentials.Insecure)//读取配置文件
+                    new ServerPort(serverAddress,serverPort,ServerCredentials.Insecure)//读取配置文件
                 }
             };
             server.Start();
+            #endregion
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
