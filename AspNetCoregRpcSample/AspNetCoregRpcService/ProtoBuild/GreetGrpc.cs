@@ -7,28 +7,28 @@
 
 using grpc = global::Grpc.Core;
 
-namespace GrpcGreeter {
+namespace AspNetCoregRpcService {
   /// <summary>
   /// The greeting service definition.
   /// </summary>
   public static partial class Greeter
   {
-    static readonly string __ServiceName = "Greet.Greeter";
+    static readonly string __ServiceName = "greet.Greeter";
 
-    static readonly grpc::Marshaller<global::GrpcGreeter.HelloRequest> __Marshaller_Greet_HelloRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcGreeter.HelloRequest.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::GrpcGreeter.HelloReply> __Marshaller_Greet_HelloReply = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::GrpcGreeter.HelloReply.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::AspNetCoregRpcService.HelloRequest> __Marshaller_greet_HelloRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::AspNetCoregRpcService.HelloRequest.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::AspNetCoregRpcService.HelloReply> __Marshaller_greet_HelloReply = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::AspNetCoregRpcService.HelloReply.Parser.ParseFrom);
 
-    static readonly grpc::Method<global::GrpcGreeter.HelloRequest, global::GrpcGreeter.HelloReply> __Method_SayHello = new grpc::Method<global::GrpcGreeter.HelloRequest, global::GrpcGreeter.HelloReply>(
+    static readonly grpc::Method<global::AspNetCoregRpcService.HelloRequest, global::AspNetCoregRpcService.HelloReply> __Method_SayHello = new grpc::Method<global::AspNetCoregRpcService.HelloRequest, global::AspNetCoregRpcService.HelloReply>(
         grpc::MethodType.Unary,
         __ServiceName,
         "SayHello",
-        __Marshaller_Greet_HelloRequest,
-        __Marshaller_Greet_HelloReply);
+        __Marshaller_greet_HelloRequest,
+        __Marshaller_greet_HelloReply);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::GrpcGreeter.GreetReflection.Descriptor.Services[0]; }
+      get { return global::AspNetCoregRpcService.GreetReflection.Descriptor.Services[0]; }
     }
 
     /// <summary>Base class for server-side implementations of Greeter</summary>
@@ -41,7 +41,7 @@ namespace GrpcGreeter {
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
-      public virtual global::System.Threading.Tasks.Task<global::GrpcGreeter.HelloReply> SayHello(global::GrpcGreeter.HelloRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::AspNetCoregRpcService.HelloReply> SayHello(global::AspNetCoregRpcService.HelloRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -62,7 +62,7 @@ namespace GrpcGreeter {
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
     public static void BindService(grpc::ServiceBinderBase serviceBinder, GreeterBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_SayHello, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcGreeter.HelloRequest, global::GrpcGreeter.HelloReply>(serviceImpl.SayHello));
+      serviceBinder.AddMethod(__Method_SayHello, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::AspNetCoregRpcService.HelloRequest, global::AspNetCoregRpcService.HelloReply>(serviceImpl.SayHello));
     }
 
   }
