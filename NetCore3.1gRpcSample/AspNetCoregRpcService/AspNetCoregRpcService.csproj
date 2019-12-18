@@ -6,7 +6,7 @@
 
   <!--这段配置为配置proto文件编译以及编译后的类文件的输出目录-->
   <ItemGroup>
-    <Protobuf Include=".\Protos\*.proto" GrpcServices="Server" OutputDir="ProtoBuild\" CompileOutputs="false" 
+    <Protobuf Include="Protos\*.proto" GrpcServices="Server" OutputDir="ProtoBuild\" CompileOutputs="false" 
               Link="Protos\%(RecursiveDir)%(Filename)%(Extension)"/>
   </ItemGroup>
 
