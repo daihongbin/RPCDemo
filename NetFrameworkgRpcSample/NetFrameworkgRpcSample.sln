@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gRPCClient", "gRPCClient\gRPCClient.csproj", "{FCA9E97A-94F7-4EF0-9C97-37181D36B2C5}"
 EndProject
@@ -60,6 +60,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {858EC620-41CE-4334-B948-5792A1F64BF7}
+		SolutionGuid = {20931262-B101-41AC-8584-2E7B1A6C63F5}
 	EndGlobalSection
 EndGlobal
